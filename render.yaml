@@ -60,15 +60,15 @@ services:
       - key: QUEUE_NAME
         value: n8n-queue
       - key: QUEUE_BULL_REDIS_HOST
-        fromServices:
+        fromService:
           name: n8n-queue
           property: host
       - key: QUEUE_BULL_REDIS_USERNAME
-        fromServices:
+        fromService:
           name: n8n-queue
           property: user
       - key: QUEUE_BULL_REDIS_PASSWORD
-        fromServices:
+        fromService:
           name: n8n-queue
           property: password
   - type: keyvalue
