@@ -53,10 +53,6 @@ services:
           property: user
       - key: EXECUTIONS_MODE
         value: queue
-      - key: QUEUE_BULL_REDIS_HOST
-        fromService:
-          name: n8n-keyvalue
-          property: internalKeyValueURL
   - type: keyvalue
     plan: free
     name: n8n-keyvalue
