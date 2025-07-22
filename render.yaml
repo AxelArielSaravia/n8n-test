@@ -51,8 +51,6 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
-      - key: EXECUTIONS_MODE
-        value: queue
       - key: NODE_ENV
         value: production
       - key: EXECUTIONS_MODE
@@ -61,16 +59,9 @@ services:
         value: n8n-queue
       - key: QUEUE_BULL_REDIS_HOST
         fromService:
+          type: keyvalue
           name: n8n-queue
           property: host
-      - key: QUEUE_BULL_REDIS_USERNAME
-        fromService:
-          name: n8n-queue
-          property: user
-      - key: QUEUE_BULL_REDIS_PASSWORD
-        fromService:
-          name: n8n-queue
-          property: password
   - type: keyvalue
     plan: free
     name: n8n-queue
