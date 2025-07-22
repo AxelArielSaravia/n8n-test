@@ -80,7 +80,7 @@ services:
     image:
       url: docker.io/n8nio/n8n:latest
     envVars:
-    - key: N8N_ENCRYPTION_KEY
+      - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: DB_TYPE
         value: postgresdb
