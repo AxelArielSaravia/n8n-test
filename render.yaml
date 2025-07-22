@@ -56,7 +56,7 @@ services:
   - type: keyvalue
     plan: free
     name: n8n-keyvalue
-  
+    ipAllowList: []
 databases:
   - name: n8n-db
     plan: free
