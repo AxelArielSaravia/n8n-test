@@ -51,7 +51,21 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
-
+      - key: EXECUTIONS_MODE
+        value: queue
+      - key: QUEUE_BULL_REDIS_HOST
+        fromService:
+          name: n8n-keyvalue
+          property: internalKeyValueURL
+  - type: keyvalue
+    plan: free
+    name: n8n-keyvalue
+    enVars:
+      - key: REDISPASSWORD
+        generateValue: true
+      - key: REDISUSER
+        value: default
+  
 databases:
   - name: n8n-db
     plan: free
@@ -63,3 +77,4 @@ databases:
     # setting the `diskSizeGB` property.
     #
     # diskSizeGB: 5
+  
