@@ -18,9 +18,6 @@ services:
       # Pulls the n8n image tagged as latest from Docker Hub
       url: docker.io/n8nio/n8n:latest
 
-    # All environment variables defined below are required!
-    #
-    # You can define additional environment variables as needed.
     envVars:
       # Generates a base64-encoded key for
       # encrypting credentials in n8n
