@@ -60,11 +60,6 @@ services:
   - type: keyvalue
     plan: free
     name: n8n-keyvalue
-    enVars:
-      - key: REDISPASSWORD
-        generateValue: true
-      - key: REDISUSER
-        value: default
   
 databases:
   - name: n8n-db
