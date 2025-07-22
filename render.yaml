@@ -53,13 +53,33 @@ services:
           property: user
       - key: EXECUTIONS_MODE
         value: queue
+      - key: NODE_ENV
+        value: production
+      - key: EXECUTIONS_MODE
+        value: queue
+      - key: QUEUE_NAME
+        value: n8n-queue
+      - key: QUEUE_BULL_REDIS_HOST
+        fromServices:
+          name: n8n-queue
+          property: host
+      - key: QUEUE_BULL_REDIS_USERNAME
+        fromServices:
+          name: n8n-queue
+          property: user
+      - key: QUEUE_BULL_REDIS_PASSWORD
+        fromServices:
+          name: n8n-queue
+          property: password
   - type: keyvalue
     plan: free
-    name: n8n-keyvalue
+    name: n8n-queue
     ipAllowList: []
+    
 databases:
   - name: n8n-db
     plan: free
+    user: n8n_user
     # The free instance type is limited to 1 GB of disk
     # space.
     #
